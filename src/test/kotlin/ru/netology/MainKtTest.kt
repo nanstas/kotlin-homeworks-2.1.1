@@ -10,7 +10,7 @@ class MainKtTest {
     // комиссия для Mastercard 0р. при сумме переводов <= 75 000р. в месяц
     fun calculationCommission_forMastercardWithBenefits() {
         // arrange
-        val typeCard = "Mastercard"
+        val typeCard = TypeCard.MASTERCARD
         val transferAmount = 60_000_00
         val previousTransaction = 10_000_00
 
@@ -29,7 +29,7 @@ class MainKtTest {
     // комиссия для Mastercard при сумме переводов > 75 000р. в месяц составит 0.6% + 20р.
     fun calculationCommission_forMastercardWithoutBenefits() {
         // arrange
-        val typeCard = "Mastercard"
+        val typeCard = TypeCard.MASTERCARD
         val transferAmount = 65_000_00
         val previousTransaction = 20_000_00
 
@@ -48,7 +48,7 @@ class MainKtTest {
     // комиссия для Maestro 0р. при сумме переводов <= 75 000р. в месяц
     fun calculationCommission_forMaestroWithBenefits() {
         // arrange
-        val typeCard = "Maestro"
+        val typeCard = TypeCard.MAESTRO
         val transferAmount = 60_000_00
         val previousTransaction = 10_000_00
 
@@ -67,7 +67,7 @@ class MainKtTest {
     // комиссия для Maestro при сумме переводов > 75 000р. в месяц составит 0.6% + 20р.
     fun calculationCommission_forMaestroWithoutBenefits() {
         // arrange
-        val typeCard = "Maestro"
+        val typeCard = TypeCard.MAESTRO
         val transferAmount = 65_000_00
         val previousTransaction = 20_000_00
 
@@ -88,7 +88,7 @@ class MainKtTest {
     // минимальная комиссия для Visa 35р., если 0.75% от покупки <= 35р.
     fun calculationCommission_forVisaWhenMinCommission() {
         // arrange
-        val typeCard = "Visa"
+        val typeCard = TypeCard.VISA
         val transferAmount = 2_000_00
         val previousTransaction = 10_000_00
 
@@ -107,7 +107,7 @@ class MainKtTest {
     // стандартная для Visa комиссия 0.75%, минимальный порог превышен = 35р.
     fun calculationCommission_forVisa() {
         // arrange
-        val typeCard = "Visa"
+        val typeCard = TypeCard.VISA
         val transferAmount = 6_000_00
         val previousTransaction = 10_000_00
 
@@ -126,7 +126,7 @@ class MainKtTest {
     // минимальная комиссия для Mir 35р., если 0.75% от покупки <= 35р
     fun calculationCommission_forMirWhenMinCommission() {
         // arrange
-        val typeCard = "Mir"
+        val typeCard = TypeCard.MIR
         val transferAmount = 2_000_00
         val previousTransaction = 10_000_00
 
@@ -145,7 +145,7 @@ class MainKtTest {
     // стандартная для Mir комиссия 0.75%, минимальный порог превышен = 35р.
     fun calculationCommission_forMir() {
         // arrange
-        val typeCard = "Mir"
+        val typeCard = TypeCard.MIR
         val transferAmount = 6_000_00
         val previousTransaction = 10_000_00
 
@@ -166,7 +166,7 @@ class MainKtTest {
     // комиссия для VK Pay не взимается
     fun calculationCommission_forVkPay() {
         // arrange
-        val typeCard = "VK Pay"
+        val typeCard = TypeCard.VKPAY
         val transferAmount = 2_000_00
         val previousTransaction = 10_000_00
 
